@@ -1,0 +1,185 @@
+    1  nmtui
+    2  clear
+    3  exit
+    4  ip addr
+    5  nmtui
+    6  ip addr
+    7  vim /etc/hosts
+    8  yum install vim 
+    9  vim /etc/hosts
+   10  vim /etc/hostname
+   11  clear
+   12  init 6
+   13  exit
+   14  clear
+   15  vim /etc/selinux/config
+   16  systemctl stop firewalld
+   17  systemctl disable firewalld
+   18  clear
+   19  ls
+   20  ls -la
+   21  cd .ssh
+   22  ls
+   23  ls -la authorized_keys
+   24  cd
+   25  clear
+   26  su - kube
+   27  timedatectl set-timezone Asia/Dhaka
+   28  init 6
+   29  ping 1.1.1.1
+   30  nmtui
+   31  clear
+   32  date
+   33  date
+   34  sudo kubeadm config images pull
+   35  sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.5.10 --cri-socket=unix:///run/containerd/containerd.sock
+   36  sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.56.124 --cri-socket=unix:///run/containerd/containerd.sock
+   37  kubeadm reset
+   38  sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.56.124 --cri-socket=unix:///run/containerd/containerd.sock
+   39  vim /etc/kubernetes/admin.conf
+   40  ls
+   41  mkdir .kube
+   42  ls
+   43  ls -a
+   44  cd .kube/
+   45  ls
+   46  sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.56.124 --cri-socket=unix:///run/containerd/containerd.sock
+   47  cd .
+   48  cd ..
+   49  kubeadm reset
+   50  rm -rf .kube/
+   51  ls
+   52  sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.56.124 --cri-socket=unix:///run/containerd/containerd.sock
+   53   mkdir -p $HOME/.kube
+   54    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   55    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   56   export KUBECONFIG=/etc/kubernetes/admin.conf
+   57  kubectl get nodes
+   58  ss -tunlp
+   59  kubectl get pods
+   60  kubectl get pods -A
+   61  kubectl get node
+   62  kubectl get pods -A
+   63  kubectl get nodes
+   64  ss -tunlp
+   65  cd /var/log/pods
+   66  ls
+   67  cd kube-system_kube-apiserver-masters_2b378f6f3e857b4ce7861504acdb2b0b
+   68  ls
+   69  cd kube-apiserver/
+   70  ls
+   71  vim 10.log
+   72  ls
+   73  tail 10.log
+   74  ls
+   75  ss -tunlp
+   76  kubectl get nodes
+   77  ss -tunlp
+   78  cd ..
+   79  cd kube-system_etcd-masters_36c6f542837d3c7701d45e3b9bb4dace/etcd/
+   80  ls
+   81  tail 10.log 
+   82  ss -tunlp
+   83  kubect get pods
+   84  kubectl get pods
+   85  systemctl stop kubelet
+   86  ss -tunlp
+   87  systemctl start kubelet
+   88  ss -tunlp
+   89  kubectl get pods
+   90  kubectl get pods -A
+   91  kubectl get nodes
+   92  vim 3.log 
+   93  ls
+   94  tail 13.log 
+   95  cd ..
+   96  cd kube-system_kube-apiserver-masters_2b378f6f3e857b4ce7861504acdb2b0b/
+   97  cd kube-apiserver/
+   98  ls
+   99  tail 12.log 
+  100  kubectl get pods
+  101  kubectl get pods -A
+  102  ls
+  103  vim 12.log 
+  104  ls
+  105  vim 13.log 
+  106  vim /etc/containerd/config.toml 
+  107  systemctl restart kubelet
+  108  kubectl get pods -A
+  109  kubectl get nodes
+  110  kubectl get pods -A
+  111  kubectl get nodes
+  112  kubectl get pods -A
+  113  init 6
+  114  ss -tulp
+  115  ss -tunlp
+  116  ls
+  117  kubectl get pods -A
+  118  ls
+  119  kubectl get pods -A
+  120  ss -tunlp
+  121  systemctl start kubelet
+  122  ss -tunlp
+  123  systemctl status kubelt
+  124  systemctl status kubelet
+  125  journalctl -u kubelet
+  126  systemctl status continerd
+  127  systemctl status containerd
+  128  systemctl start containerd
+  129  systemctl status containerd
+  130  systemctl start kubelet
+  131  systemctl statuskubelet
+  132  systemctl status kubelet
+  133  ss -tunp
+  134  kubectl get pods -A
+  135  kubectl get nodes
+  136  kubectl get pods -A
+  137  dnf install bash-completion
+  138  kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+  139  exit
+  140  kubectl -n kube-system describe pod coredns-5d78c9869d-jh2vr 
+  141  kubectl -n kube-system describe node masters 
+  142  kubectl get deployments.apps 
+  143  kubectl get deployments.apps -n kube-system 
+  144  kubectl -n kube-system rollout restart deployment coredns 
+  145  kubectl get pods -A
+  146  kubectl taint node masters node.kubernetes.io/not-ready-
+  147  kubectl get pods -A
+  148  kubectl describe pod -n kube-system coredns-5d78c9869d-tsqqr 
+  149  ls
+  150  kubectl get pods -A
+  151  wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+  152  curl https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+  153  curl -o  https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+  154  curl -O https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+  155  ls
+  156  curl https://docs.projectcalico.org/manifests/calico.yaml -O
+  157  ls
+  158  rm -f tigera-operator.yaml 
+  159  kubectl apply -f calico.yaml 
+  160  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/master/manifests/calico.yaml
+  161  kubectl get pods -A
+  162  kubectl rollout restart deployment -n kube-system coredns 
+  163  kubectl get pods -A
+  164  kubectl -n kube-system describe pod coredns-87b96695f-fpb8s 
+  165  kubeadm reset
+  166  rm -rf .kube/
+  167  sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.56.124 --cri-socket=unix:///run/containerd/containerd.sock
+  168   mkdir -p $HOME/.kube
+  169    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  170    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  171  kubectl describe node masters 
+  172  kubectl get pods -A
+  173  kubectl get nodes
+  174  kubectl get pods -A
+  175  ls
+  176  kubectl apply -f calico.yaml
+  177  kubectl get pods -A
+  178  kubectl describe coredns-5d78c9869d-4mcw5
+  179  kubectl describe pods coredns-5d78c9869d-4mcw5 -n kube-system
+  180  kubectl get pods -A
+  181  ls
+  182  kubectl apply -f calico.yaml
+  183  kubectl apply -f calico.yaml --validate=false
+  184  history
+  185  history >> new.txt
