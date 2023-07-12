@@ -1,0 +1,38 @@
+---
+- hosts: masters
+  become: true
+  tasks:
+    - name: Install dependencies
+      yum:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+
+    - name: Add Docker repository
+      shell: >
+        yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: Install Docker
+      yum:
+        name: "{{ item }}"
+        state: latest
+        update_cache: yes
+      loop:
+        - docker-ce
+        - docker-ce-cli
+
+    - name: Ensure Docker service is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart Docker
+      service:
+        name: docker
+        state: restarted
